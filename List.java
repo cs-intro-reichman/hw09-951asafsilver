@@ -1,3 +1,4 @@
+// Final fix for submission
 /** Represents a list of CharData objects. */
 public class List {
 
