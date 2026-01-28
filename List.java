@@ -1,4 +1,3 @@
-// Final fix for submission
 /** Represents a list of CharData objects. */
 public class List {
 
@@ -26,7 +25,7 @@ public class List {
         size++;
     }
     
-  public String toString() {
+    public String toString() {
         if (size == 0) return "()";
         StringBuilder str = new StringBuilder("(");
         Node current = first;
@@ -52,7 +51,7 @@ public class List {
     }
 
     /** TIKUN: Adds new characters to the END of the list (FIFO). */
-   public void update(char chr) {
+    public void update(char chr) {
         if (first == null) {
             first = new Node(new CharData(chr));
             size++;
@@ -66,7 +65,7 @@ public class List {
                 return;
             }
             
-            // המחשב חייב להגיע לכאן כדי להוסיף לסוף הרשימה (FIFO)
+            // THIS IS THE CRITICAL FIX:
             if (current.next == null) {
                 current.next = new Node(new CharData(chr));
                 size++;
