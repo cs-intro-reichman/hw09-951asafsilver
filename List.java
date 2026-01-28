@@ -26,8 +26,18 @@ public class List {
         size++;
     }
     
-   public String toString() {
-        return "CHECK_ME_PLEASE";
+  public String toString() {
+        if (size == 0) return "()";
+        StringBuilder str = new StringBuilder("(");
+        Node current = first;
+        while (current != null) {
+            str.append(current.cp.toString());
+            if (current.next != null) {
+                str.append(" ");
+            }
+            current = current.next;
+        }
+        return str.toString() + ")";
     }
 
     public int indexOf(char chr) {
